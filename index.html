@@ -1,1 +1,219 @@
-Hi
+<!DOCTYPE html>
+<html><head lang="en"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <title>Bayes' Rays</title>
+
+
+
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta property="og:image" content="https://spotlesssplats.github.io/img/baysrays_titlecard.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://bayesrays.github.io">
+    <meta property="og:title" content="SpotLessSplats: Ignoring Distractors in 3D Gaussian Splatting">
+    <meta property="og:description" content="abstract.">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="SpotLessSplats: Ignoring Distractors in 3D Gaussian Splatting">
+    <meta name="twitter:description" content="">
+    <meta name="twitter:image" content="https://spotlesssplats.github.io/img/sls_titlecard.png">
+
+
+    <!-- mirror: F0%9F%AA%9E&lt -->
+    <link rel="icon" type="image/x-icon" href="./img/favicon.png">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/codemirror.min.css">
+    <link rel="stylesheet" href="css/app.css">
+
+
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/codemirror.min.js"></script>
+    <script src="js/clipboard.min.js"></script>
+    <script src="js/video_comparison.js"></script>
+    <script src="js/app.js"></script>
+</head>
+
+<body>
+    <div class="container" id="header" style="text-align: center; margin: auto;">
+        <div class="row" id="title-row" style="max-width: 100%; margin: 0 auto; display: inline-block">
+            <h2 class="col-md-12 text-center" id="title">
+                <b>SpotLessSplats</b>: Ignoring Distractors in 3D Gaussian Splatting<br>
+
+            </h2>
+        </div>
+	<div class="row" id="title-row" style="max-width: 100%; margin: 0 auto; display: inline-block">
+            
+        </div>
+        <div class="row" id="author-row" style="margin:auto;">
+            <div class="col-md-12 text-center" style="display: table; margin:auto">
+                <table class="author-table" id="author-table">
+                    <tr>
+			<td>
+				<table style="width:100%">
+					<td>
+                            			<a style="text-decoration:none" href="https://research.google/people/sara-sabour/">
+                              			Sara Sabour*
+                            			</a>
+                            			<br>University of Toronto<br>Google DeepMind
+                        		</td>
+                        		<td>
+                            			<a style="text-decoration:none" href="https://lilygoli.github.io/">
+                             			 Lily Goli*
+                           			</a>
+                            			<br>University of Toronto<br>Google DeepMind
+                        		</td>
+                        		
+                        		<td>
+                            			<a style="text-decoration:none" href="https://grgkopanas.github.io/">
+                             			George Kopanas
+                            			</a>
+                            			<br>Google DeepMind
+                        		</td>
+				</table>
+			</td>	
+                    </tr>
+			<tr>
+                        <td>
+				<table style="width:100%">
+					<td>
+                            			<a style="text-decoration:none" href="https://research.google/people/mark-j-matthews/">
+                             			Mark Matthews
+                            			</a>
+                            			<br>Google DeepMind
+                        		</td>
+<td>
+                            			<a style="text-decoration:none" href="https://scholar.google.com/citations?user=sY8lt7AAAAAJ&hl=en">
+                             			Dmitry Lagun
+                            			</a>
+                            			<br>Google DeepMind
+                        		</td>
+					<td>
+                            			<a style="text-decoration:none" href="https://geometry.stanford.edu/member/guibas/">
+                             			Leonidas Guibas
+                            			</a>
+                            			<br>Stanford University<br>Google DeepMind
+                        		</td>
+				</table>
+			</td>	
+                    </tr>
+                    <tr>
+                        <td>
+				<table style="width:100%">
+					<td>
+                           		 	<a style="text-decoration:none" href="https://www.cs.toronto.edu/~jacobson/">
+                                		Alec Jacobson
+                            			</a>
+                            			<br>University of Toronto
+                        			</td>
+					<td>
+                           		 	<a style="text-decoration:none" href="https://www.cs.toronto.edu/~fleet/">
+                                		David J. Fleet
+                            			</a>
+                            			<br>University of Toronto<br>Google DeepMind
+                        			</td>
+                        		<td>
+                            			<a style="text-decoration:none" href="https://taiya.github.io/">
+                              			Andrea Tagliasacchi
+                            			</a>
+			                            <br>University of Toronto<br>Simon Fraser University<br>Google DeepMind
+                        		</td>
+				</table>
+			</td>	
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.getElementById('author-row').style.maxWidth = document.getElementById("title-row").clientWidth + 'px';
+    </script>
+    <div class="container text-center" id="main">
+    <div class="row">
+        <div class="col-md-8 col-md-offset-3">
+            <ul >
+                <li class="mb-3 ">
+                    <a href="https://github.com/SpotLessSplats/SpotLessSplats.github.io/raw/main/paper.pdf">
+                        <img src="./img/paper_image.png" height="60px">
+                        <h4><strong>Paper</strong></h4>
+                    </a>
+                </li>
+                <li class="mb-3 ">
+                    <a href="https://arxiv.org/abs/">
+                        <img src="./img/arxiv.jpeg" height="60px">
+                        <h4><strong>arXiv</strong></h4>
+                    </a>
+                </li>
+                <li class="mb-3">
+                    <a href="https://SpotLessSplats.github.io">
+                        <img src="img/github.png" height="60px">
+                        <h4><strong>Code</strong></h4>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+</div>
+
+
+	<div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                
+                <div class="text-center">
+                    <video id="refdir" width="100%" playsinline autoplay loop muted>
+                        <source src="video/TEASER.mp4" type="video/mp4" />
+                    </video>
+                </div>
+            </div>
+        </div>
+
+        
+
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Abstract
+                </h3>
+                <p class="text-justify">
+3D Gaussian Splatting (3DGS) is a promising techniquefor 3D reconstruction,  offering efficient training and ren-dering speeds, making it suitable for real-time applications.However,  current  methods  require  highly  controlled  envi-ronments—no moving people or wind-blown elements, andconsistent lighting—to meet the inter-view consistency as-sumption of 3DGS. This makes reconstruction of real-worldcaptures problematic.  We present SpotLessSplats, a novelapproach that leverages Stable Diffusion features and ro-bust optimization to effectively ignore transient distractors.Our method achieves state-of-the-art reconstruction qualityboth visually and quantitatively, on casual captures.
+                </p>
+            </div>
+        </div>
+	
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Citation
+                </h3>
+                <div class="form-group col-md-10 col-md-offset-1">
+                    <textarea id="bibtex" class="form-control" readonly>
+@article{sabour2024spotlessplats,
+    title={{SpotLessSplats}: Ignoring Distractors in 3D Gaussian Splatting},
+    author={Sabour, Sara and Goli, Lily and Kopanas, George and Matthews, Mark and Lagun, Dmitry and Guibas, Leonidas and Jacobson, Alec and Fleet, David J. and Tagliasacchi, Andrea},
+    journal={ArXiv},
+    year={2024}
+}</textarea>
+                </div>
+            </div>
+        </div>
+
+
+       
+    </div>
+
+</div>
+       
+	
+</body></html>
