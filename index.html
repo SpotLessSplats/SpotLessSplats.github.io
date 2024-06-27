@@ -186,10 +186,30 @@
                     Abstract
                 </h3>
                 <p class="text-justify">
-3D Gaussian Splatting (3DGS) is a promising techniquefor 3D reconstruction,  offering efficient training and ren-dering speeds, making it suitable for real-time applications.However,  current  methods  require  highly  controlled  envi-ronments—no moving people or wind-blown elements, andconsistent lighting—to meet the inter-view consistency as-sumption of 3DGS. This makes reconstruction of real-worldcaptures problematic.  We present SpotLessSplats, a novelapproach that leverages Stable Diffusion features and ro-bust optimization to effectively ignore transient distractors.Our method achieves state-of-the-art reconstruction qualityboth visually and quantitatively, on casual captures.
+3D Gaussian Splatting (3DGS) is a promising technique for 3D reconstruction,  offering efficient training and rendering speeds, making it suitable for real-time applications. However,  current  methods  require  highly  controlled  environments—no moving people or wind-blown elements, and consistent lighting—to meet the inter-view consistency assumption of 3DGS. This makes reconstruction of real-world captures problematic.  We present SpotLessSplats, a novel approach that leverages Stable Diffusion features and robust optimization to effectively ignore transient distractors.Our method achieves state-of-the-art reconstruction quality both visually and quantitatively, on casual captures.
                 </p>
             </div>
         </div>
+
+	<div class="row" >
+    <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+        <h3>Results</h3>
+	We show comparison to vanilla 3DGS on RobustNeRF dataset:
+        <table>
+            <tr>
+                <td>
+                    <video class="video" id="statue1" width="100%" loop playsinline autoplay muted src="video/statue.mp4" onplay="resizeAndPlay(this)" style="height: 0;"></video>
+                    <canvas height="512" class="videoMerge" id="statue1Merge" width="512"></canvas>
+                </td>
+                <td>
+                    <video class="video" id="statue2" width="100%" loop playsinline autoplay muted src="video/statue.mp4" onplay="resizeAndPlay(this)" style="height: 0;"></video>
+                    <canvas height="512" class="videoMerge" id="statue2Merge" width="512"></canvas>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
 	
         
         <div class="row">
@@ -199,7 +219,7 @@
                 </h3>
                 <div class="form-group col-md-10 col-md-offset-1">
                     <textarea id="bibtex" class="form-control" readonly>
-@article{sabour2024spotlessplats,
+@article{sabour2024spotlesssplats,
     title={{SpotLessSplats}: Ignoring Distractors in 3D Gaussian Splatting},
     author={Sabour, Sara and Goli, Lily and Kopanas, George and Matthews, Mark and Lagun, Dmitry and Guibas, Leonidas and Jacobson, Alec and Fleet, David J. and Tagliasacchi, Andrea},
     journal={ArXiv},
