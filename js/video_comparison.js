@@ -90,22 +90,8 @@ function resizeAndPlay(element) {
     var cv = document.getElementById(element.id + "Merge");
     cv.width = element.videoWidth / 2;
     cv.height = element.videoHeight;
+    element.play();
+    element.style.height = "0px";  // Hide video without stopping it
 
-    // Play the video only if it's Safari on mobile (iOS)
-    var isSafariMobile = /iPhone|iPad|iPod/i.test(navigator.userAgent) && !window.MSStream;
-    if (isSafariMobile) {
-        // Add a click event listener to play the video on user interaction
-        element.addEventListener('click', function() {
-            element.play();
-        }, { once: true }); // Ensures the event listener is removed after first play
-    } else {
-        // For other browsers, directly play the video
-        element.play();
-    }
-
-    // Hide video without stopping it
-    element.style.height = "0px";
-
-    // Call playVids to handle the video merging
     playVids(element.id);
 }
