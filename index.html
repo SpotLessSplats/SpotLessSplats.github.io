@@ -83,7 +83,7 @@
             </div>
 	     <div class="container text-center" id="main">
         
-            <div class="col-md-12 text-center" style="display: table; margin-left:2%">
+            <div class="col-md-12 text-center" style="display: table;">
                 <ul>
                     <li class="mb-3">
                         <a href="https://github.com/SpotLessSplats/SpotLessSplats.github.io/raw/main/paper.pdf">
@@ -105,17 +105,8 @@
                     </li>
                 </ul>
         </div>
-    </div>
-        </div>
-    </div>
-    <script>
-        document.getElementById('author-row').style.maxWidth = document.getElementById("title-row").clientWidth + 'px';
-    </script>
-
-
-
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
+    </div>	<div class="row">
+        <div class="col-md-12">
             <div class="text-center">
                 <video id="refdir" width="100%" playsinline autoplay loop muted>
                     <source src="video/TEASER.mp4" type="video/mp4">
@@ -123,9 +114,9 @@
             </div>
         </div>
     </div>
-
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
+	
+ <div class="row">
+        <div class="col-md-12">
             <h3>Abstract</h3>
             <p class="text-justify">
                 3D Gaussian Splatting (3DGS) is a promising technique for 3D reconstruction, offering efficient training and rendering speeds, making it suitable for real-time applications. However, current methods require highly controlled environments—no moving people or wind-blown elements, and consistent lighting—to meet the inter-view consistency assumption of 3DGS. This makes reconstruction of real-world captures problematic. We present SpotLessSplats, a novel approach that leverages Stable Diffusion features and robust optimization to effectively ignore transient distractors. Our method achieves state-of-the-art reconstruction quality both visually and quantitatively, on casual captures.
@@ -134,7 +125,7 @@
     </div>
 
     <div class="row">
-        <div class="col-md-8 col-md-offset-2">
+        <div class="col-md-12 text-left">
             <h3>Results</h3>
             <p>We show comparison to vanilla 3DGS on RobustNeRF dataset:</p>
             <table class="results-table" style="width: 100%; border-collapse: collapse; text-align: center;">
@@ -171,7 +162,7 @@
     </div>
 
     <div class="row">
-        <div class="col-md-8 col-md-offset-2">
+        <div class="col-md-12 text-left">
             <h3>Citation</h3>
             <div class="form-group col-md-10 col-md-offset-1">
                 <textarea id="bibtex" class="form-control" readonly>
@@ -184,5 +175,16 @@
             </div>
         </div>
     </div>
+        </div>
+    </div>
+    <script>
+        document.getElementById('author-row').style.maxWidth = document.getElementById("title-row").clientWidth + 'px';
+    </script>
+
+
+
+    
+
+   
 </body>
 </html>
