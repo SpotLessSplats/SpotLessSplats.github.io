@@ -129,6 +129,20 @@
             <h3>Results</h3>
             <p>We show comparison to vanilla 3DGS on RobustNeRF dataset:</p>
             <table class="results-table" style="width: 100%; border-collapse: collapse; text-align: center;">
+		<tr>
+                    <td class="video-cell">
+                        <div class="video-container">
+                            <video class="video" id="yoda" width="100%" loop playsinline autoplay muted src="video/yoda.mp4" onplay="resizeAndPlay(this)"></video>
+                            <canvas class="videoMerge" id="yodaMerge"></canvas>
+                        </div>
+                    </td>
+                    <td class="video-cell">
+                        <div class="video-container">
+                            <video class="video" id="crab" width="100%" loop playsinline autoplay muted src="video/crab.mp4" onplay="resizeAndPlay(this)"></video>
+                            <canvas class="videoMerge" id="crabMerge"></canvas>
+                        </div>
+                    </td>
+                </tr>
                 <tr>
                     <td class="video-cell">
                         <div class="video-container">
@@ -143,24 +157,45 @@
                         </div>
                     </td>
                 </tr>
-                <tr>
-                    <td class="video-cell">
-                        <div class="video-container">
-                            <video class="video" id="yoda" width="100%" loop playsinline autoplay muted src="video/yoda.mp4" onplay="resizeAndPlay(this)"></video>
-                            <canvas class="videoMerge" id="yodaMerge"></canvas>
-                        </div>
-                    </td>
-                    <td class="video-cell">
-                        <div class="video-container">
-                            <video class="video" id="crab" width="100%" loop playsinline autoplay muted src="video/crab.mp4" onplay="resizeAndPlay(this)"></video>
-                            <canvas class="videoMerge" id="crabMerge"></canvas>
-                        </div>
-                    </td>
-                </tr>
+
             </table>
+	<br>
+	 <p>We also show comparison to vanilla 3DGS on NeRf On-the-go dataset:</p>
+            <table class="results-table" style="width: 80%; border-collapse: collapse; margin: auto;">
+    <tr>
+        <td class="video-cell" style="text-align: center;">
+            <div class="video-container">
+                <video class="video" id="patio" width="100%" loop playsinline autoplay muted src="video/patio.mp4" onplay="resizeAndPlay(this)"></video>
+                <canvas class="videoMerge" id="patioMerge"></canvas>
+            </div>
+	    <div style="text-align: center;"><p>Patio</p></div>	
+        </td>
+    </tr>
+    <tr>
+        <td class="video-cell" style="text-align: center;">
+            <div class="video-container">
+                <video class="video" id="corner" width="100%" loop playsinline autoplay muted src="video/corner.mp4" onplay="resizeAndPlay(this)"></video>
+                <canvas class="videoMerge" id="cornerMerge"></canvas>
+            </div>
+	    <div style="text-align: center;"><p>Corner</p></div>	
+        </td>
+    </tr>
+    <tr>
+        <td class="video-cell" style="text-align: center;">
+            <div class="video-container">
+                <video class="video" id="spot" width="100%" loop playsinline autoplay muted src="video/spot.mp4" onplay="resizeAndPlay(this)"></video>
+                <canvas class="videoMerge" id="spotMerge"></canvas>
+            </div>
+	    <div style="text-align: center;"><p>Spot</p></div>	
+        </td>
+    </tr>	
+</table>
+
         </div>
     </div>
 
+           
+   
     <div class="row">
         <div class="col-md-12 text-left">
             <h3>Citation</h3>
@@ -180,10 +215,6 @@
     <script>
         document.getElementById('author-row').style.maxWidth = document.getElementById("title-row").clientWidth + 'px';
     </script>
-
-
-
-    
 
    
 </body>
