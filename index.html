@@ -191,33 +191,34 @@
             </div>
         </div>
 
-	<div class="row" >
-    <div class="row">
+ <div class="row">
     <div class="col-md-8 col-md-offset-2">
         <h3>Results</h3>
-	We show comparison to vanilla 3DGS on RobustNeRF dataset:
-        <table>
-            <tr>
-                <td>
-                    <video class="video" id="statue" width="100%" loop playsinline autoplay muted src="video/statue.mp4" onplay="resizeAndPlay(this)" style="height: 0;"></video>
-                    <canvas  class="videoMerge" id="statueMerge"></canvas>
-                </td>
-                <td>
-                    <video class="video" id="android" width="100%" loop playsinline autoplay muted src="video/android.mp4" onplay="resizeAndPlay(this)" style="height: 0;"></video>
-                    <canvas  class="videoMerge" id="androidMerge"></canvas>
-                </td>
-            </tr>
-	    <tr>
-                <td>
-                    <video class="video" id="yoda" width="100%" loop playsinline autoplay muted src="video/yoda.mp4" onplay="resizeAndPlay(this)" style="height: 0;"></video>
-                    <canvas  class="videoMerge" id="yodaMerge"></canvas>
-                </td>
-                <td>
-                    <video class="video" id="yoda2" width="100%" loop playsinline autoplay muted src="video/yoda.mp4" onplay="resizeAndPlay(this)" style="height: 0;"></video>
-                    <canvas  class="videoMerge" id="yoda2Merge"></canvas>
-                </td>
-            </tr>	
-        </table>
+        We show comparison to vanilla 3DGS on RobustNeRF dataset:
+        <table style="width: 98%; border-collapse: collapse; text-align: center;">
+    <tr>
+	<td style="padding-left: 10px; padding-right: 10px;">
+            <video class="video" id="android" width="100%" loop playsinline autoplay muted src="video/android.mp4" onplay="resizeAndPlay(this)" style="height: 0; margin-left: 20px;"></video>
+            <canvas class="videoMerge" id="androidMerge"></canvas>
+        </td>
+        <td style="padding-left: 10px; padding-right: 10px;">
+            <video class="video" id="statue" width="100%" loop playsinline autoplay muted src="video/statue.mp4" onplay="resizeAndPlay(this)" style="height: 0; margin-right: 20px;"></video>
+            <canvas class="videoMerge" id="statueMerge"></canvas>
+        </td>
+        
+    </tr>
+    <tr>
+        <td style="padding-left: 10px; padding-right: 10px;">
+            <video class="video" id="yoda" width="100%" loop playsinline autoplay muted src="video/yoda.mp4" onplay="resizeAndPlay(this)" style="height: 0; margin-right: 20px;"></video>
+            <canvas class="videoMerge" id="yodaMerge"></canvas>
+        </td>
+        <td style="padding-left: 10px; padding-right: 10px;">
+            <video class="video" id="crab" width="100%" loop playsinline autoplay muted src="video/crab.mp4" onplay="resizeAndPlay(this)" style="height: 0; margin-left: 20px;"></video>
+            <canvas class="videoMerge" id="crabMerge"></canvas>
+        </td>
+    </tr>
+</table>
+
     </div>
 </div>
 	
@@ -229,7 +230,7 @@
                 </h3>
                 <div class="form-group col-md-10 col-md-offset-1">
                     <textarea id="bibtex" class="form-control" readonly>
-@article{sabour2024spotlesssplats,
+@article{sabourgoli2024spotlesssplats,
     title={{SpotLessSplats}: Ignoring Distractors in 3D Gaussian Splatting},
     author={Sabour, Sara and Goli, Lily and Kopanas, George and Matthews, Mark and Lagun, Dmitry and Guibas, Leonidas and Jacobson, Alec and Fleet, David J. and Tagliasacchi, Andrea},
     journal={ArXiv},
